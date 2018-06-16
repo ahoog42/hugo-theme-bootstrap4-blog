@@ -36,3 +36,11 @@
 
 - id: links
   translation: "Links"
+
+- id: categories
+  translation: "Categories"
+
+- id: tag-cloud 
+  translation: "Tags"
+
+
