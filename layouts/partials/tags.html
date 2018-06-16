@@ -1,0 +1,8 @@
+  {{ if .Site.Taxonomies.tags }}
+    <section class="sidebar-module">
+      <strong>{{ i18n "tag-cloud" }}</strong><br />
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+          <a class="badge badge-primary" href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+        {{ end }}
+  {{ end }}
+  </section>
