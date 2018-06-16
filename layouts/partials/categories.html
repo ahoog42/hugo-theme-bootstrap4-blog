@@ -1,0 +1,13 @@
+  {{ if .Site.Taxonomies.categories }}
+    <section class="sidebar-module">
+      <strong>{{ i18n "categories" }}</strong>
+        <ol class="list-unstyled">
+          {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          <li>
+            <a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            ({{ $taxonomy.Count }})
+          </li>
+          {{ end }}
+        </ol>
+  {{ end }}
+  </section>
