@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="{{ .Permalink }}">
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}{{ if .Site.Params.subtitle }} - {{ .Site.Params.subtitle }}{{ end }}</title>
 
     {{ "<!-- combined, minified CSS -->" | safeHTML }}
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet"{{ if not .Site.Params.disable_sri }} integrity="{{ .Site.Data.sri.style}}" crossorigin="anonymous"{{ end }}>
@@ -78,8 +78,9 @@
       {{ if .Site.Copyright }}
       {{ .Site.Copyright | markdownify }}
       {{ else }}
-      Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
-      {{ end }}
+        <a href="https://twitter.com/ahoog42" title="Twitter"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/andrewhoog" title="LinkedIn"><i class="fa fa-linkedin fa-2x"></i></a>
+        {{ end }}
       </p>
       <p>
       <a href="#">{{ i18n "backToTop" }}</a>
